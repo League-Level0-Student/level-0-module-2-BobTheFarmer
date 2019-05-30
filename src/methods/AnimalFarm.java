@@ -6,7 +6,6 @@ import java.applet.AudioClip;
 
 //Level 0
 
-
 import javax.swing.JApplet;
 import javax.swing.JOptionPane;
 
@@ -16,9 +15,30 @@ public class AnimalFarm {
 		/*
 		 * 1. Ask the user which animal they want, then play the sound of that animal.
 		 */
-		
-		/* 2. Make it so that the user can keep entering new animals. */
+		for(int i = 0; i>-1;) {
+		String animal = "";
+		animal = JOptionPane.showInputDialog(null,
+				"Enter an animal. (Your choises are cow, duck, dog, cat and llama) ");
+		if (animal.equalsIgnoreCase("cow")) {
+			playMoo();
+		}
+		else if (animal.equalsIgnoreCase("duck")) {
+			playQuack();
+		}
+		else if (animal.equalsIgnoreCase("dog")) {
+		playWoof();
 	}
+		else if (animal.equalsIgnoreCase("cat")) {
+		playCat();
+	}
+		else if (animal.equalsIgnoreCase("llama")) {
+		playLlama();
+	}
+		else
+			JOptionPane.showMessageDialog(null, "ERROR 404 - The string \"" + animal + "\" cannot be found");
+		}
+	}
+	/* 2. Make it so that the user can keep entering new animals. */
 
 	void playMoo() {
 		playNoise(mooFile);
@@ -30,6 +50,12 @@ public class AnimalFarm {
 
 	void playWoof() {
 		playNoise(woofFile);
+	}
+	void playCat() {
+		playNoise(meowFile);	
+	}
+	void playLlama() {
+		playNoise(llamaFile);
 	}
 
 	String quackFile = "quack.wav";

@@ -19,7 +19,9 @@ public class SafeCracker {
 		 * combinations
 		 */
 		
-
+		for(int i = 10000000; i>-1; i = i-1) {
+			tryCode(i);
+		}
 	}
 
 	static void tryCode(int guess) {
@@ -32,7 +34,9 @@ public class SafeCracker {
 			playTheSoundOfSuccess();
 			System.exit(0);
 		}
+	
 	}
+	
 
 	private static void playTheSoundOfSuccess() {
 		try {
